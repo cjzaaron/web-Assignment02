@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="booking.css"> -->
+    <link rel="stylesheet" href="booking2.css" />
+
+    <title>Airbnb Booking</title>
+  </head>
+  <body>
+    <header>
+      <img src="images/airbnb.svg" alt="airbnb" />
+    </header>
+    <table id="main">
+      <tr>
+        <td>
+          <table id="table1">
+            <tr>
+                <td class="til">Personal profile</td>
+              </tr>
+            <tr>
+              <td>Title</td>
+              <td>
+                <input type="radio" name="title" value="Ms." /> Ms.
+                <input type="radio" name="title" value="Mr." /> Mr.
+                <input type="radio" name="title" value="Mrs." /> Mrs.
+              </td>
+            </tr>
+            <tr>
+              <td>First name</td>
+              <td><input type="text" placeholder="" name="firstName"/></td>
+            </tr>
+            <tr>
+              <td>Last name</td>
+              <td><input type="text" placeholder="" name="lastName"/><span id="name-error" class="com1"></span></td>
+            </tr>
+            <tr>
+              <td>Email address</td>
+              <td><input type="email" placeholder="" /><span id="email-error" class="com1"></span></td>
+            </tr>
+            <tr>
+              <td>Phone number</td>
+              <td><input type="tel" placeholder="e.g.,123-45-678" /><span id="phone-number-error" class="com1"></span></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table id="table2">
+            <tr>
+              <td class="til">Room Type</td>
+            </tr>
+            <tr>
+              <td>Standard room ($200/night)</td>
+              <td>
+                <input type="number" value="0" min="0" max="10" id="Standard" />
+              </td>
+            </tr>
+            <tr>
+              <td>Double room ($300/night)</td>
+              <td>
+                <input type="number" value="0" min="0" max="10" id="Double" />
+              </td>
+            </tr>
+            <tr>
+              <td>Deluxe room($400/night)</td>
+              <td>
+                <input type="number" value="0" min="0" max="10" id="Deluxe" />
+              </td>
+            </tr>
+            <tr>
+              <td class="til">Booking information</td>
+            </tr>
+            <tr>
+              <td>Adults</td>
+              <td><input type="number" value="1" id="adults" min="1"/></td>
+            </tr>
+            <tr>
+              <td>Children</td>
+              <td><input type="number" value="0" id="children" /></td>
+            </tr>
+            <tr>
+              <td>Start date</td>
+              <td><input type="date" value="" id="Start" /></td>
+            </tr>
+            <tr>
+              <td>End date</td>
+              <td><input type="date" value="" id="End" /></td>
+            </tr>
+            <tr>
+              <td>Estimated arrival time</td>
+              <td><input type="time" value="12:00" /></td>
+            </tr>
+            <tr>
+              <td class="til">Breakfast</td>
+              <td><input type="checkbox" id="breakfast" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="com">
+                Check to include breakfast (adult: $50/day; children: $20/day).
+              </td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td><button id="calculateBtn">Calculate</button></td>
+              <td>
+                <span>Total cost = <span id="total-cost"> </span></span>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table id="table3">
+            <tr>
+                <td class="til">Card information</td>
+              </tr>
+            <tr>
+              <td>Card type</td>
+              <td>
+                <label
+                  ><input type="radio" name="card" value="union" /><img
+                    src="images/union.svg"
+                    alt=""
+                /></label>
+                <label
+                  ><input type="radio" name="card" value="visa" /><img
+                    src="images/visa.svg"
+                    alt=""
+                /></label>
+                <label
+                  ><input type="radio" name="card" value="mastercard" /><img
+                    src="images/mastercard.svg"
+                    alt=""
+                /></label>
+              </td>
+            </tr>
+            <tr>
+              <td>Card number</td>
+              <td><input type="text" placeholder="" id="card-number"/><span id="card-number-error" class="com1"></span></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="com" id="tips"></td>
+            </tr>
+            <tr>
+              <td>CVV</td>
+
+              <td><input type="password" placeholder="" id="cvv"/><span id="cvv-error" class="com1"></span></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="com">
+                This is the secret code on the back of the card. It must be of 3 digits.
+              </td>
+            </tr>
+            <tr>
+              <td>Cardholder name</td>
+              <td><input type="text" id="cardholder-name"/><span id="cardholder-name-error" class="com1"></td>
+            </tr>
+            <tr>
+              <td>Card expiration</td>
+              <td><input type="month" /></td>
+            </tr>
+          </table>
+          <table id="table4">
+            <tr>
+              <td><button id="cancel">Cancel</button></td>
+              <td><button id="pay">Confirm and pay</button></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <footer>
+      <p>&copy 2023 Aaron 32111043. Contact: 32111043@stu.zucc.edu.cn</p>
+    </footer>
+  </body>
+  <!-- <script src="booking.js"></script> -->
+  <script src="booking2.js"></script>
+</html>
+
